@@ -1,13 +1,16 @@
 {
   "name": "ls-fs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Some file utilities",
   "main": "lib/ls-fs.js",
   "scripts": {
     "test": "./node_modules/gulp/bin/gulp.js test"
   },
   "keywords": [
-    "file"
+    "file",
+    "tmp",
+    "dir",
+    "json"
   ],
   "author": "Spain <spain@livesafemobile.com>",
   "license": "MIT",
@@ -27,5 +30,13 @@
     "q": "^1.1.2",
     "q-io": "^1.11.6",
     "tmp": "0.0.24"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:LiveSafe/ls-fs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LiveSafe/ls-fs/issues"
+  },
+  "homepage": "https://github.com/LiveSafe/ls-fs"
 }
