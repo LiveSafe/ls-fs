@@ -1,4 +1,4 @@
-# ls-fs
+# ls-fs [![Build Status](https://travis-ci.org/LiveSafe/ls-fs.svg?branch=master)](https://travis-ci.org/LiveSafe/ls-fs)
 
 File utils
 
@@ -17,13 +17,43 @@ lsFs.readJson('settings.json').then(function(settings) {
 
 ## API
 
-### safeMerge
+### readJson
 
 ```js
-lsFs.readJson(path)
+lsFs.readJson(path, [opts]).then(function(parsedJsonObj) {
+    console.log(parsedJsonObj);
+});
 ```
 
 ###### Arguments
 
 1. `path` _(String)_ The path to the JSON file to read
+
+
+### writeJson
+
+```js
+lsFs.writeJson(path, obj, [opts]).then(function(pathToJson) {
+    
+});
+```
+
+###### Arguments
+
+1. `path` _(String)_ The path to the JSON file to write
+1. `obj` _(*)_ The thing to JSON.stringify
+
+
+### tmpDir
+
+```js
+lsFs.tmpDir([opts]).then(function(pathToTmpDir) {
+    // do stuff with my temporary directory
+});
+```
+
+###### Arguments
+
+1. `path` _(String)_ The path to the JSON file to write
+1. `obj` _(*)_ The thing to JSON.stringify
 
