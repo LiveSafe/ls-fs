@@ -54,6 +54,5 @@ lsFs.tmpDir([opts]).then(function(pathToTmpDir) {
 
 ###### Arguments
 
-1. `path` _(String)_ The path to the JSON file to write
-1. `obj` _(*)_ The thing to JSON.stringify
+1. `[opts]` _(Object)_ Same as https://github.com/raszi/node-tmp#directory-creation
 
