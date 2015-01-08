@@ -1,8 +1,14 @@
 language: node_js
 node_js:
-  - '0.11'
-  - '0.10'
-
+- '0.11'
+- '0.10'
 notifications:
   flowdock:
-    secure: "CwMVH1E+z1MhTqFJ33ft4PQ2dk2Bz3xMuu4CzZ7sT8e+TBuhMTbiBY+hK+yUuYIFHy5Objoe/3lnsx20w5U+C3PMv0WE20ulBJ5h03wOMbrpqPpmKITnFmZieWGxJuNStvAOCNbo/Fa98tGsb0I/4Sv4Ebj8z+9PWzg5sLAVWDs="
+    secure: CwMVH1E+z1MhTqFJ33ft4PQ2dk2Bz3xMuu4CzZ7sT8e+TBuhMTbiBY+hK+yUuYIFHy5Objoe/3lnsx20w5U+C3PMv0WE20ulBJ5h03wOMbrpqPpmKITnFmZieWGxJuNStvAOCNbo/Fa98tGsb0I/4Sv4Ebj8z+9PWzg5sLAVWDs=
+deploy:
+  provider: npm
+  email: mc.s.pain.how.er+npm@gmail.com
+  api_key:
+    secure: l9+6tJf1S30D1KA1j4V0nOcZojSWaanQQa1/UOTxPbICSMprLruvnFOEJN4BJ10NNiY8fwP0RjL6R+nwZMVfR89i131EuZsygRzKEJOd0V2qyfGjnjh+yIumxNOaSukcUY616R5u3x/97pWusSut7HCEHLg80EXt111pVrme0l0=
+  on:
+    repo: LiveSafe/ls-fs
