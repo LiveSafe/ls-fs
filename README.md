@@ -56,3 +56,37 @@ lsFs.tmpDir([opts]).then(function(pathToTmpDir) {
 
 1. `[opts]` _(Object)_ Same as https://github.com/raszi/node-tmp#directory-creation
 
+
+### requireDir
+
+Takes a path to a directory and returns an object containing all the `require`d modules in that directory.
+
+For example, if you have a directory with:
+
+```
+some-module.js
+other-module.js
+static-content.json
+```
+
+`requireDir` on that directory would return an object like:
+
+```
+{
+  someModule: <module.exports of some-module.js>,
+  ...
+}
+```
+
+###### Usage
+
+```js
+lsFs.requireDir(pathToDir).then(function(requiredDirObj) {
+    // use required modules
+});
+```
+
+###### Arguments
+
+1. `pathToDir` _(String)_ Path to the directory you would like to recursively require
+
