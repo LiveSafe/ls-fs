@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '0.11'
+- '0.12'
 - '0.10'
 notifications:
   flowdock:
@@ -11,4 +11,6 @@ deploy:
   api_key:
     secure: l9+6tJf1S30D1KA1j4V0nOcZojSWaanQQa1/UOTxPbICSMprLruvnFOEJN4BJ10NNiY8fwP0RjL6R+nwZMVfR89i131EuZsygRzKEJOd0V2qyfGjnjh+yIumxNOaSukcUY616R5u3x/97pWusSut7HCEHLg80EXt111pVrme0l0=
   on:
+    tags: true
+    all_branches: true
     repo: LiveSafe/ls-fs
