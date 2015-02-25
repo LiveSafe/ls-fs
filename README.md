@@ -44,6 +44,35 @@ lsFs.writeJson(path, obj, [opts]).then(function(pathToJson) {
 1. `obj` _(*)_ The thing to JSON.stringify
 
 
+### readIni
+
+```js
+lsFs.readIni(path, [opts]).then(function(parsedIniObj) {
+    console.log(parsedIniObj);
+});
+```
+
+###### Arguments
+
+1. `path` _(String)_ The path to the INI file to read
+1. `[opts]` _(Object)_ Identical to `q-io/fs.read ` options
+
+
+### writeIni
+
+```js
+lsFs.writeIni(path, obj, [opts]).then(function(pathToIni) {
+    console.log('wrote ' + pathToIni);
+});
+```
+
+###### Arguments
+
+1. `path` _(String)_ The path to the INI file to write
+1. `obj` _(*)_ The thing to stringify into INI format
+1. `opts` _(Object)_ Merge of options for `ini` and `q-io/fs.write`
+
+
 ### tmpDir
 
 ```js

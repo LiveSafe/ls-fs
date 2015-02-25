@@ -2,7 +2,7 @@
 
 var _ = require('ls-lodash'),
     path = require('path'),
-    expect = require('chai').expect,
+    expect = require('./test-helper').expect,
     fs = require('fs'),
     qFs = require('q-io/fs'),
     lsFs = require('..');
@@ -12,7 +12,7 @@ describe('readJson', function() {
         var jsonPath = path.join(__dirname, 'fixtures/test.json');
 
         return lsFs.readJson(jsonPath).then(function(fixtureObj) {
-            expect(fixtureObj).to.deep.equal({
+            return expect(fixtureObj).to.deep.equal({
                 foo: 'bar',
                 bar: {
                     baz: 1
@@ -45,7 +45,7 @@ describe('readJson', function() {
             .then(function(jsonPath) {
                 return lsFs.readJson(jsonPath)
                     .then(function(readObj) {
-                        expect(readObj).to.deep.equal(newObj);
+                        return expect(readObj).to.deep.equal(newObj);
                     })
                     .then(_.constant(jsonPath));
             })
@@ -57,7 +57,7 @@ describe('tmp', function() {
     it('should create a directory', function() {
         return lsFs.tmpDir().then(function(tmpDirPath) {
             return qFs.isDirectory(tmpDirPath).then(function(isDir) {
-                expect(isDir).to.be.true();
+                return expect(isDir).to.be.true;
             });
         });
     });
