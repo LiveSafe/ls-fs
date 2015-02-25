@@ -6,7 +6,10 @@ var _ = require('ls-lodash'),
     jscs = require('gulp-jscs'),
     mocha = require('gulp-mocha'),
     mergeStream = require('merge-stream'),
-    lsConfigs = require('ls-default-configs');
+    lsGulpTasks = require('lvsf-gulp-tasks'),
+
+    dirsToLint = ['./*.js', 'lib/**/*.js'],
+    testDirsToLint = ['test/*.js'];
 
 gulp.task('default', _.noop);
 
@@ -14,29 +17,8 @@ gulp.task('test', function() {
     gulp.start('lint', 'mocha');
 });
 
-gulp.task('mocha', function() {
-    return gulp.src(['test/*.js'], {read: false})
-        .pipe(mocha());
-});
+gulp.task('lint', lsGulpTasks.lint(dirsToLint, testDirsToLint));
 
-gulp.task('lint', function() {
-    var jshintTestConfig = _.safeMerge(lsConfigs.jshintrc, {
-            globals: {
-                describe: true,
-                it: true
-            }
-        }),
-        jscsLint = gulp.src(['lib/**/*.js', 'test/**/*.js', './*.js'])
-            .pipe(jscs(lsConfigs.jscsrc)),
-        testLint = gulp.src(['test/*.js'])
-            .pipe(jshint(jshintTestConfig))
-            .pipe(jshint.reporter('jshint-stylish'))
-            .pipe(jshint.reporter('fail')),
+gulp.task('stylecheck', lsGulpTasks.checkstyle(dirsToLint.concat(testDirsToLint)));
 
-        otherLint = gulp.src(['./*.js', 'lib/*.js'])
-            .pipe(jshint(lsConfigs.jshintrc))
-            .pipe(jshint.reporter('jshint-stylish'))
-            .pipe(jshint.reporter('fail'));
-
-    return mergeStream(testLint, otherLint, jscsLint);
-});
+gulp.task('mocha', ['lint', 'stylecheck'], lsGulpTasks.mocha(['test/**/*.test.js']));
