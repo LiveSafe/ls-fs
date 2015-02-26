@@ -1,6 +1,6 @@
 {
   "name": "ls-fs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Some file utilities",
   "main": "lib/ls-fs.js",
   "scripts": {
