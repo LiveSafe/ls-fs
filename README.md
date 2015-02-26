@@ -1,4 +1,4 @@
-# ls-fs [![Build Status](https://travis-ci.org/LiveSafe/ls-fs.svg?branch=master)](https://travis-ci.org/LiveSafe/ls-fs)
+# ls-fs [![Build Status](https://travis-ci.org/LiveSafe/ls-fs.svg?branch=master)](https://travis-ci.org/LiveSafe/ls-fs) [![Circle CI](https://circleci.com/gh/LiveSafe/ls-fs.svg?style=shield&circle-token=ac6bea4e44c3b11564962c131dc315c6090f3147)](https://circleci.com/gh/LiveSafe/ls-fs)
 
 File utils
 
